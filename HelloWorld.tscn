@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HelloWorld.gd" type="Script" id=1]
+[ext_resource path="res://Frame_counter.gd" type="Script" id=2]
+
+[node name="Panel" type="Panel"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 904.051
+margin_top = 407.764
+margin_right = 976.051
+margin_bottom = 438.764
+text = "HelloWorld
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 777.808
+margin_top = 589.753
+margin_right = 1118.81
+margin_bottom = 751.753
+text = "CLIC ME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Frame_counter" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 155.0
+margin_right = 196.0
+margin_bottom = 222.0
+script = ExtResource( 2 )
