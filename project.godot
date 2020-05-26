@@ -26,6 +26,10 @@ window/size/height=1080
 window/size/borderless=true
 window/stretch/aspect="keep"
 
+[memory]
+
+limits/message_queue/max_size_kb=200000
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

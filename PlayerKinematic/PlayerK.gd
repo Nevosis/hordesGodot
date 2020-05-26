@@ -1,16 +1,12 @@
 extends KinematicBody2D
 
 
-export var defaultSpeed = 400
+export var defaultSpeed = 75
 var speed = defaultSpeed
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func _physics_process(delta):
 	var velocity = Vector2()  # The player's movement vector.
@@ -30,9 +26,11 @@ func _physics_process(delta):
 
 
 
-func _on_dirt(body):
+func _on_dirt():
+	print("onDirt")
 	speed = defaultSpeed / 2
 
 
-func _on_grass(body):
+func _on_grass():
+	print("onGrass")
 	speed = defaultSpeed
