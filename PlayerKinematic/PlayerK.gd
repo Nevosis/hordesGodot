@@ -28,9 +28,6 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_dirt(body):
