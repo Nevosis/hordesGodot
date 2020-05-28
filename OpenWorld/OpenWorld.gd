@@ -3,10 +3,12 @@ extends Node2D
 export var xMax = 100
 export var yMax = 100
 
-var player = preload("res://PlayerKinematic/PlayerK.tscn")
+
 var dirtScn = preload("res://BasicTerrain/Dirt/Dirt.tscn")
 var grassScn = preload("res://BasicTerrain/Grass/Grass.tscn")
 var waterScn = preload("res://BasicTerrain/Water/Water.tscn")
+var player = preload("res://PlayerKinematic/PlayerK.tscn")
+
 var playerInstance
 
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +24,9 @@ func _ready():
 				nodeTerrain = grassScn.instance()
 			nodeTerrain.position = Vector2(i*16,j*16)
 			add_child(nodeTerrain)
+
 	playerInstance = player.instance()
-	playerInstance.position = Vector2(xMax/2*16,yMax/2*16)
+	playerInstance.position = Vector2(50, 50)
 	add_child(playerInstance)
 	
 	for x in get_children():
@@ -32,14 +35,11 @@ func _ready():
 				x.connect("body_entered", self, "_on_Grass_entered")
 			elif x.filename.find("Dirt") >= 0:
 				x.connect("body_entered", self, "_on_Dirt_entered")
-			elif x.filename.find("Water") >= 0:
-				x.connect("body_entered", self, "_on_Water_entered")
 
-func _on_Grass_entered(body):
+func _on_Grass_entered(_body):
+	print("grass")
 	playerInstance._on_grass()
 	
-func _on_Dirt_entered(body):
+func _on_Dirt_entered(_body):
+	print("dirt")
 	playerInstance._on_dirt()
-	
-func _on_Water_entered(body):
-	print("On water, et ouais gros ya pas encore de collision !!")
